@@ -10,12 +10,14 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Post {
+model User {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
 
     content String @db.VarChar(255)
     authorId String
+    userName String
+    password String
 
     @@index([authorId]) 
 
